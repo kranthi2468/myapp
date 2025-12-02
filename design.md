@@ -32,6 +32,13 @@ This module implements a **7-step atomic pipeline** to generate market-validated
 6.  **API 6: `prepare-final-corpus`** (Merges Strategy + SERP + Products) -\> `corpus_data`
 7.  **API 7: `generate-topics-and-prompts`** (**LLM 2**: Final Output) -\> `topics_and_prompts`
 
+
+<img width="1941" height="1036" alt="image" src="https://github.com/user-attachments/assets/3b5ec1fa-8623-4a8a-8655-8ea983424e8e" />
+
+
+
+
+
 -----
 
 ## **2.0 Database Schema (Full Definitions)**
@@ -200,8 +207,11 @@ interface TopicsAndPrompts {
 
 -----
 
+
+
 ## **3.0 API Specifications (Logic & Contracts)**
 
+[![](https://mermaid.ink/img/pako:eNq1VVFv2jAQ_iuWn6hKCoQESh4qBegqNNqxwh42ISErOYK1YHu205ZV_e-7JEDZaGhflhfH9nd333f3BZ5pJGOgATXwKwMRwZCzRLP1XBB8FNOWR1wxYckg5SDs8Xk4GRFmyIQrSLmAfH8MGvZzzK0UiRz2j6-vn2x-jwtowVIyBf3AIzCkFsamMR7fNvBEnc1FGXonLRD5ADovFpCpBUVaARmJbfiQWVYiS9LO1VUBnHyZzkhjCTZaOXwLduI9GDGIRBKYciUVX27IjWZq9XV8eD_sB-SbMqAtMSVqodnjokxTzc8NyC3TP8F-iF0iZZKCw2LzNr-b4p5gd177_UpvJAp6ZZIFJlnoTJhT7Nr5qpmFZEMGUqvMVDNUGnB24JhtgBMdBLyS-JQLIbX9UM4Ltrn4s0PoloPmIiH9jKcx8hrLhEcVospiRbtJbbZRgNGz-3B2ffP9pD88bBoIyCnvpVZrTLbQvci31Q2OlBfTQcOSAUtT0iK1iZZLjqM6JzM0S2TOKnTtCr07Kh_X6_sJ1sbOPtn3nITJFU7oAPuviJIXqQ1WbK24FOQzbB6ljv-mWn4WmCxUnNSmEX4YQCZh2BhyE2XGYGC1NgwrJvauuA6S4rlbPmrCZY4-7cC9sc_Lxv0PC34a3YXjk_7r7pRtXYj9-oD9bDEbh4nYUVqula0Qedy0t-zoFnbMs1RNqqy3wHqLbT1ap4nmMQ2szqBO16DXLN_S5zzFnNoVrGFOA3yNYcmy1M7pXLxgGP6y_5ByvYvUMktWNFiy1OAuU9i-3Z_N_lSDwOYPZCYsDVq-WyShwTN9wq170e10m0233Wz67Uvfa9fphgaO53kXXrvX6rnupdvt-L32S53-LgpjhNdpub7n9zrdVtNt-i9_ABO0MII?type=png)](https://mermaid.live/edit#pako:eNq1VVFv2jAQ_iuWn6hKCoQESh4qBegqNNqxwh42ISErOYK1YHu205ZV_e-7JEDZaGhflhfH9nd333f3BZ5pJGOgATXwKwMRwZCzRLP1XBB8FNOWR1wxYckg5SDs8Xk4GRFmyIQrSLmAfH8MGvZzzK0UiRz2j6-vn2x-jwtowVIyBf3AIzCkFsamMR7fNvBEnc1FGXonLRD5ADovFpCpBUVaARmJbfiQWVYiS9LO1VUBnHyZzkhjCTZaOXwLduI9GDGIRBKYciUVX27IjWZq9XV8eD_sB-SbMqAtMSVqodnjokxTzc8NyC3TP8F-iF0iZZKCw2LzNr-b4p5gd177_UpvJAp6ZZIFJlnoTJhT7Nr5qpmFZEMGUqvMVDNUGnB24JhtgBMdBLyS-JQLIbX9UM4Ltrn4s0PoloPmIiH9jKcx8hrLhEcVospiRbtJbbZRgNGz-3B2ffP9pD88bBoIyCnvpVZrTLbQvci31Q2OlBfTQcOSAUtT0iK1iZZLjqM6JzM0S2TOKnTtCr07Kh_X6_sJ1sbOPtn3nITJFU7oAPuviJIXqQ1WbK24FOQzbB6ljv-mWn4WmCxUnNSmEX4YQCZh2BhyE2XGYGC1NgwrJvauuA6S4rlbPmrCZY4-7cC9sc_Lxv0PC34a3YXjk_7r7pRtXYj9-oD9bDEbh4nYUVqula0Qedy0t-zoFnbMs1RNqqy3wHqLbT1ap4nmMQ2szqBO16DXLN_S5zzFnNoVrGFOA3yNYcmy1M7pXLxgGP6y_5ByvYvUMktWNFiy1OAuU9i-3Z_N_lSDwOYPZCYsDVq-WyShwTN9wq170e10m0233Wz67Uvfa9fphgaO53kXXrvX6rnupdvt-L32S53-LgpjhNdpub7n9zrdVtNt-i9_ABO0MII)
 #### **API 1: `POST /fetch-internal-data`**
 
   * **Service:** `ShopifyDataService`
